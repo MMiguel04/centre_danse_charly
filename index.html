@@ -2,39 +2,101 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Grand Jour - Wedding planner et Déco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charly Mayasi - Centre de Danse Africaine</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #1a202c;
+        body { background: #0f172a; }
+        .fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
-    <div class="text-center w-full max-w-xs bg-gray-800 p-6 rounded-2xl shadow-2xl border border-gray-700">
-        <!-- Logo au-dessus du slogan -->
-        <img src="logo/Logo GrandJour.png" alt="Logo" class="mx-auto mb-2 w-25 h-25 shadow-md">
 
-        <!-- Titre -->
-        <h1 class="text-xl font-semibold mb-6 text-gray-300">Votre évènement, notre engagement pour la réussite !</h1>
+<body class="min-h-screen flex items-center justify-center px-4">
+    <div class="text-center w-full max-w-sm bg-gray-900/80 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-amber-800/30 fade-in">
 
-        <!-- Séparateur -->
-        <p class="text-sm font-medium mb-2 text-gray-400">Suivez-nous sur nos Réseaux</p>
-        <hr class="border-t-2 border-gray-600 my-4 w-3/4 mx-auto">
+        <!-- Photo / Logo -->
+        <img src="logo/charly.png" alt="Charly Mayasi" 
+             class="mx-auto mb-6 w-32 h-32 rounded-full object-cover shadow-2xl border-4 border-amber-600/40">
 
-        <!-- Réseaux sociaux -->
-        <div class="flex flex-col items-center space-y-4">
-            <a href="https://www.instagram.com/grandjour__officiel?igsh=MW4xYzlvbDFkaDMzYw%3D%3D&utm_source=qr" class="flex items-center text-pink-400 hover:text-pink-500 text-lg font-medium transition duration-300" target="_blank">
-                <i class="fab fa-instagram text-xl mr-3"></i> Instagram
-            </a>
-            <a href="https://www.tiktok.com/@grandjour_officiel?_t=ZN-90Spq60yV78&_r=1" class="flex items-center text-white hover:text-gray-400 text-lg font-medium transition duration-300" target="_blank">
-                <i class="fab fa-tiktok text-xl mr-3"></i> TikTok
-            </a>
+        <!-- Nom en deux lignes -->
+        <h1 class="mb-8 leading-tight">
+            <span class="block text-4xl md:text-5xl font-bold tracking-wider" 
+                  style="font-family: 'Oswald', sans-serif; color: #fcd34d;">
+                  CHARLY
+            </span>
+            <span class="block text-5xl md:text-6xl -mt-2" 
+                  style="font-family: 'Dancing Script', cursive; color: #fbbf24;">
+                  Mayasi
+            </span>
+        </h1>
+
+        <p class="text-amber-200 text-lg mb-1">Danseur · Chorégraphe</p>
+        <p class="text-gray-400 text-sm mb-8">Danse traditionnelle Africaine - Congo-RDC</p>
+
+        <!-- Séparateur stylé -->
+        <div class="flex items-center justify-center gap-4 mb-6">
+            <div class="h-px bg-gradient-to-r from-transparent via-amber-600 to-transparent w-20"></div>
+            <span class="text-amber-400 text-sm tracking-widest">RÉSEAUX</span>
+            <div class="h-px bg-gradient-to-r from-transparent via-amber-600 to-transparent w-20"></div>
         </div>
+
+        <!-- Réseaux sociaux (les 3 liens complets) -->
+        <div class="flex flex-col items-center space-y-5">
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/centrededansecharlymayasi" target="_blank"
+               class="group flex items-center gap-4 w-full bg-gradient-to-r from-amber-600/10 to-orange-600/10 
+                      px-6 py-4 rounded-xl border border-amber-500/20 
+                      hover:border-amber-400 hover:bg-amber-500/20 
+                      transition-all duration-300 transform hover:scale-105">
+               <div class="bg-gradient-to-br from-pink-500 to-purple-600 p-3 rounded-full text-white group-hover:animate-pulse">
+                 <i class="fab fa-instagram text-2xl"></i>
+               </div>
+               <span class="text-amber-100 font-semibold text-lg tracking-wide">Instagram</span>
+               <i class="fas fa-arrow-right ml-auto text-amber-300 opacity-0 group-hover:opacity-100 transition"></i>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/profile.php?id=100075381456789" target="_blank"
+               class="group flex items-center gap-4 w-full bg-blue-900/20 
+                      px-6 py-4 rounded-xl border border-blue-500/30 
+                      hover:border-blue-400 hover:bg-blue-600/20 
+                      transition-all duration-300 transform hover:scale-105">
+               <div class="bg-blue-600 p-3 rounded-full text-white">
+                 <i class="fab fa-facebook-f text-2xl"></i>
+               </div>
+               <span class="text-blue-200 font-semibold text-lg tracking-wide">Facebook</span>
+               <i class="fas fa-arrow-right ml-auto text-blue-300 opacity-0 group-hover:opacity-100 transition"></i>
+            </a>
+
+            <!-- Site web -->
+            <a href="https://machadanse.com" target="_blank"
+               class="group flex items-center gap-4 w-full bg-emerald-900/20 
+                      px-6 py-4 rounded-xl border border-emerald-500/30 
+                      hover:border-emerald-400 hover:bg-emerald-600/20 
+                      transition-all duration-300 transform hover:scale-105">
+               <div class="bg-emerald-600 p-3 rounded-full text-white group-hover:animate-spin">
+                 <i class="fas fa-globe text-2xl"></i>
+               </div>
+               <span class="text-emerald-200 font-semibold text-lg tracking-wide">Site web</span>
+               <i class="fas fa-arrow-right ml-auto text-emerald-300 opacity-0 group-hover:opacity-100 transition"></i>
+            </a>
+
+        </div>
+
+        <!-- Footer discret -->
+        <p class="text-gray-500 text-xs mt-12">
+            © 2025 Centre de Danse Charly Mayasi · Pantin 93500
+        </p>
     </div>
 </body>
 </html>
