@@ -49,7 +49,7 @@
             <div class="h-px bg-gradient-to-r from-transparent via-amber-600 to-transparent w-20"></div>
         </div>
 
-        <!-- Réseaux sociaux (les 3 liens complets) -->
+        <!-- Réseaux sociaux -->
         <div class="flex flex-col items-center space-y-5">
 
             <!-- Instagram -->
@@ -65,8 +65,10 @@
                <i class="fas fa-arrow-right ml-auto text-amber-300 opacity-0 group-hover:opacity-100 transition"></i>
             </a>
 
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/share/17WqukLQgn/?mibextid=wwXIfr?id=100075381456789" target="_blank"
+            <!-- Facebook – FIXÉ pour profil perso (ouvre l’appli FB direct sur mobile) -->
+            <a href="fb://profile/100075381456789" 
+               fallback="https://www.facebook.com/profile.php?id=100075381456789"
+               target="_blank" rel="noopener"
                class="group flex items-center gap-4 w-full bg-blue-900/20 
                       px-6 py-4 rounded-xl border border-blue-500/30 
                       hover:border-blue-400 hover:bg-blue-600/20 
@@ -98,5 +100,27 @@
             © 2025 Centre de Danse Charly Mayasi · Pantin 93500
         </p>
     </div>
+
+    <!-- Script magique qui fait marcher le lien Facebook sur tous les mobiles -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const fbLink = document.querySelector('a[href^="fb://"]');
+        if (fbLink) {
+          fbLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            const fbApp = this.getAttribute('href');
+            const fbWeb = this.getAttribute('fallback');
+            
+            window.location = fbApp; // tente d’ouvrir l’appli
+            
+            setTimeout(function () {
+              if (document.hasFocus()) {
+                window.open(fbWeb, '_blank');
+              }
+            }, 1000);
+          });
+        }
+      });
+    </script>
 </body>
 </html>
