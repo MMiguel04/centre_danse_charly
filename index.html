@@ -7,101 +7,71 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    
     <style>
         body { background: #0f172a; }
-        .fade-in {
-            animation: fadeIn 1.2s ease-out forwards;
+        .fade-in { animation: fadeIn 1.2s ease-out forwards; }
+        @keyframes fadeIn { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse-shadow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.3); }
+            70% { box-shadow: 0 0 14px 4px rgba(251, 191, 36, 0.15); }
         }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
+        .animate-pulse-shadow { animation: pulse-shadow 3.5s infinite ease-in-out; }
     </style>
 </head>
-
 <body class="min-h-screen flex items-center justify-center px-4">
     <div class="text-center w-full max-w-sm bg-gray-900/80 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-amber-800/30 fade-in">
 
-        <!-- Photo / Logo -->
-        <img src="logo/charly.png" alt="Charly Mayasi" 
-             class="mx-auto mb-6 w-32 h-32 rounded-full object-cover shadow-2xl border-4 border-amber-600/40">
+        <img src="logo/charly.png" alt="Charly Mayasi" class="mx-auto mb-6 w-32 h-32 rounded-full object-cover shadow-2xl border-4 border-amber-600/40">
 
-        <!-- Nom en deux lignes -->
         <h1 class="mb-8 leading-tight">
-            <span class="block text-4xl md:text-5xl font-bold tracking-wider" 
-                  style="font-family: 'Oswald', sans-serif; color: #fcd34d;">
-                  CHARLY
-            </span>
-            <span class="block text-5xl md:text-6xl -mt-2" 
-                  style="font-family: 'Dancing Script', cursive; color: #fbbf24;">
-                  Mayasi
-            </span>
+            <span class="block text-4xl md:text-5xl font-bold tracking-wider" style="font-family: 'Oswald', sans-serif; color: #fcd34d;">CHARLY</span>
+            <span class="block text-5xl md:text-6xl -mt-2" style="font-family: 'Dancing Script', cursive; color: #fbbf24;">Mayasi</span>
         </h1>
 
         <p class="text-amber-200 text-lg mb-1">Danseur · Chorégraphe</p>
         <p class="text-gray-400 text-sm mb-8">Danse traditionnelle Africaine - Congo-RDC</p>
 
-        <!-- Séparateur stylé -->
+        <!-- VERSION FINALE : 2026 + sans Pantin -->
+        <div class="my-10">
+          <div class="inline-block px-6 py-5 rounded-xl bg-amber-900/20 border border-amber-600/40 animate-pulse-shadow">
+            <p class="text-amber-300 font-semibold text-base leading-tight">Prochain stage</p>
+            <p class="text-white text-2xl font-bold tracking-wider mt-1">Samedi 10 janvier 2026</p>
+            <p class="text-amber-400 text-base font-medium">14h → 17h</p>
+            <p class="text-gray-500 text-xs mt-3">+ toutes les dates sur Instagram et Facebook↓</p>
+          </div>
+        </div>
+
         <div class="flex items-center justify-center gap-4 mb-6">
             <div class="h-px bg-gradient-to-r from-transparent via-amber-600 to-transparent w-20"></div>
             <span class="text-amber-400 text-sm tracking-widest">RÉSEAUX</span>
             <div class="h-px bg-gradient-to-r from-transparent via-amber-600 to-transparent w-20"></div>
         </div>
 
-        <!-- Réseaux sociaux -->
         <div class="flex flex-col items-center space-y-5">
-
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/centrededansecharlymayasi" target="_blank"
-               class="group flex items-center gap-4 w-full bg-gradient-to-r from-amber-600/10 to-orange-600/10 
-                      px-6 py-4 rounded-xl border border-amber-500/20 
-                      hover:border-amber-400 hover:bg-amber-500/20 
-                      transition-all duration-300 transform hover:scale-105">
-               <div class="bg-gradient-to-br from-pink-500 to-purple-600 p-3 rounded-full text-white group-hover:animate-pulse">
-                 <i class="fab fa-instagram text-2xl"></i>
-               </div>
+            <a href="https://www.instagram.com/centrededansecharlymayasi" target="_blank" class="group flex items-center gap-4 w-full bg-gradient-to-r from-amber-600/10 to-orange-600/10 px-6 py-4 rounded-xl border border-amber-500/20 hover:border-amber-400 hover:bg-amber-500/20 transition-all duration-300 transform hover:scale-105">
+               <div class="bg-gradient-to-br from-pink-500 to-purple-600 p-3 rounded-full text-white group-hover:animate-pulse"><i class="fab fa-instagram text-2xl"></i></div>
                <span class="text-amber-100 font-semibold text-lg tracking-wide">Instagram</span>
                <i class="fas fa-arrow-right ml-auto text-amber-300 opacity-0 group-hover:opacity-100 transition"></i>
             </a>
 
-            <!-- Facebook – FIXÉ pour profil perso (ouvre l’appli FB direct sur mobile) -->
-            <a href="fb://profile/100075381456789" 
-               fallback="https://www.facebook.com/profile.php?id=100075381456789"
-               target="_blank" rel="noopener"
-               class="group flex items-center gap-4 w-full bg-blue-900/20 
-                      px-6 py-4 rounded-xl border border-blue-500/30 
-                      hover:border-blue-400 hover:bg-blue-600/20 
-                      transition-all duration-300 transform hover:scale-105">
-               <div class="bg-blue-600 p-3 rounded-full text-white">
-                 <i class="fab fa-facebook-f text-2xl"></i>
-               </div>
+            <a href="fb://profile/100075381456789" fallback="https://www.facebook.com/profile.php?id=100075381456789" target="_blank" rel="noopener" class="group flex items-center gap-4 w-full bg-blue-900/20 px-6 py-4 rounded-xl border border-blue-500/30 hover:border-blue-400 hover:bg-blue-600/20 transition-all duration-300 transform hover:scale-105">
+               <div class="bg-blue-600 p-3 rounded-full text-white"><i class="fab fa-facebook-f text-2xl"></i></div>
                <span class="text-blue-200 font-semibold text-lg tracking-wide">Facebook</span>
                <i class="fas fa-arrow-right ml-auto text-blue-300 opacity-0 group-hover:opacity-100 transition"></i>
             </a>
 
-            <!-- Site web -->
-            <a href="https://machadanse.com" target="_blank"
-               class="group flex items-center gap-4 w-full bg-emerald-900/20 
-                      px-6 py-4 rounded-xl border border-emerald-500/30 
-                      hover:border-emerald-400 hover:bg-emerald-600/20 
-                      transition-all duration-300 transform hover:scale-105">
-               <div class="bg-emerald-600 p-3 rounded-full text-white group-hover:animate-spin">
-                 <i class="fas fa-globe text-2xl"></i>
-               </div>
+            <a href="https://machadanse.com" target="_blank" class="group flex items-center gap-4 w-full bg-emerald-900/20 px-6 py-4 rounded-xl border border-emerald-500/30 hover:border-emerald-400 hover:bg-emerald-600/20 transition-all duration-300 transform hover:scale-105">
+               <div class="bg-emerald-600 p-3 rounded-full text-white group-hover:animate-spin"><i class="fas fa-globe text-2xl"></i></div>
                <span class="text-emerald-200 font-semibold text-lg tracking-wide">Site web</span>
                <i class="fas fa-arrow-right ml-auto text-emerald-300 opacity-0 group-hover:opacity-100 transition"></i>
             </a>
-
         </div>
 
-        <!-- Footer discret -->
         <p class="text-gray-500 text-xs mt-12">
-            © 2025 Centre de Danse Charly Mayasi · Pantin 93500
+            © 2025 Centre de Danse Charly Mayasi · Pantin 93500<br>
         </p>
     </div>
 
-    <!-- Script magique qui fait marcher le lien Facebook sur tous les mobiles -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const fbLink = document.querySelector('a[href^="fb://"]');
@@ -110,14 +80,8 @@
             e.preventDefault();
             const fbApp = this.getAttribute('href');
             const fbWeb = this.getAttribute('fallback');
-            
-            window.location = fbApp; // tente d’ouvrir l’appli
-            
-            setTimeout(function () {
-              if (document.hasFocus()) {
-                window.open(fbWeb, '_blank');
-              }
-            }, 1000);
+            window.location = fbApp;
+            setTimeout(function () { if (document.hasFocus()) { window.open(fbWeb, '_blank'); } }, 1000);
           });
         }
       });
